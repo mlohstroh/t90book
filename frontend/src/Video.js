@@ -7,7 +7,7 @@ function Video({ url }) {
     <iframe
       title="test"
       width="auto"
-      height="100%"
+      //height="100%"
       src={fullUrl}
       scrolling="no"
       frameBorder="0"
