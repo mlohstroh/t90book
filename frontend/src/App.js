@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { doFetch } from "./utils";
-import Video from "./Video";
+import { useEffect, useState } from 'react';
+import { doFetch } from './utils';
+import Video from './Video';
 function App() {
   const [url, setUrl] = useState();
   const [error, setError] = useState();
 
   useEffect(() => {
-    doFetch("/api/current-id")
+    doFetch('/api/current-id')
       .then((resp) => {
         if (!resp.ok) {
-          throw "Unable to get the latest video. Please refresh and try again";
+          throw 'Unable to get the latest video. Please refresh and try again';
         }
 
         return resp.json();
@@ -30,11 +30,7 @@ function App() {
     return <h1 className="centered">Hold tight, getting latest video...</h1>;
   }
 
-  return (
-    <div className="container">
-      <Video url={url} />
-    </div>
-  );
+  return <Video url={url} />;
 }
 
 export default App;
